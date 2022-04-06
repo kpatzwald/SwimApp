@@ -2,17 +2,20 @@ from tokenize import String
 
 
 class swim_entry :
-	def __init__(self, date_time, distance, distance_freestyle, distance_breast, time, comment):
-		self.__start_date_time = date_time
+	def __init__(self, date, time, distance, distance_freestyle, distance_breast, duration, comment):
+		self.__date = date
+		self.__time = time
 		self.__distance = distance
 		self.__distance_freestyle = distance_freestyle
 		self.__distance_breast = distance_breast
-		self.__time: int = time
+		self.__duration: int = duration
 		self.__comment = comment
 
+	def __str__(self) -> str:
+			return "swim:entry: " + "Datum: " + self.__date + "; Zeit: " + self.__time + "; Distanz: " + self.__distance + "; Freestyle: " + self.__distance_freestyle + "; Burst: " + self.__distance_breast + "; Dauer: " + self.__duration + "; Kommentar: " + self.__comment
 
-	def get_start_date_time(self):
-		return self.__start_date_time
+	def get_date(self):
+		return self.__date
 
 	def get_distance(self) :
 		return self.__distance
@@ -32,8 +35,8 @@ class swim_entry :
 	def set_distance_freestyle(self, distance) :
 		self.__distance_freestyle = distance
 
-	def set_start_date_time(self, start_date_time):
-		self.__start_date_time = start_date_time
+	def set_date(self, date):
+		self.__date = date
 
 	def get_time(self):
 		return self.__time
@@ -46,3 +49,9 @@ class swim_entry :
 
 	def set_comment(self, comment):
 		self.__comment = comment
+
+	def get_duration(self):
+		return self.__duration
+
+	def set_duration(self, duration):
+		self.__duration = duration
